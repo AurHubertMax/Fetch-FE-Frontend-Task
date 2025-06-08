@@ -1,0 +1,414 @@
+.breed-card-container {
+    width: 100%;
+    /* margin-top: 30px; */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding-bottom: 10px;
+}
+
+.loading-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: #666;
+    font-size: 18px;
+}
+
+.dog-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    min-height: 400px;
+}
+
+.dog-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    border: 1px solid #eee;
+}
+
+.dog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dog-card-image-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.dog-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.dog-card:hover .dog-card-image {
+    transform: scale(1.05);
+}
+
+.dog-card-content {
+    padding: 15px;
+}
+
+.dog-card-name {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.dog-card-breed {
+    margin: 0 0 5px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.dog-card-age {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.breed-card-filter-sort {
+    /* background-color: black; */
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    padding: 0 4px;
+}
+
+.filter-controls {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 8px 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.filter-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-right: 12px;
+}
+
+.filter-options {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-button {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.filter-button:hover {
+    background-color: #f1f3f5;
+    border-color: #ccc;
+}
+
+.filter-button.active {
+    background-color: #e7f5ff;
+    border-color: #74c0fc;
+    color: #1971c2;
+    font-weight: 500;
+}
+
+.sort-icon {
+    margin-left: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -468px 0;
+    }
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+.skeleton {
+    background: #f6f7f8;
+    background-image: linear-gradient(
+        to right,
+        #f6f7f8 0%,
+        #edeef1 20%,
+        #f6f7f8 40%,
+        #f6f7f8 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 800px 100%;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+}
+
+.dog-card.skeleton {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 180px;
+    background-color: #ddd;
+}
+
+.skeleton-text {
+    height: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.skeleton-title {
+    height: 15px;
+    width: 70%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.skeleton-subtitle {
+    width: 85%;
+}
+
+.skeleton-subtitle.shorter {
+    width: 60%;
+}
+
+
+
+.breed-card-container h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.loading-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: #666;
+    font-size: 18px;
+}
+
+
+.dog-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    border: 1px solid #eee;
+}
+
+.dog-card.is-favorite {
+    border: 2px solid gold;
+}
+
+.favorite-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: gold;
+    font-size: 24px;
+    z-index: 5;
+}
+
+.dog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dog-card-image-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.dog-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.dog-card:hover .dog-card-image {
+    transform: scale(1.05);
+}
+
+.dog-card-content {
+    padding: 15px;
+}
+
+.dog-card-name {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.dog-card-breed {
+    margin: 0 0 5px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.dog-card-age {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Add these enhanced pagination styles */
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 30px;
+    padding: 15px 0;
+    gap: 8px;
+}
+
+.pagination-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    color: #0d6efd;
+    /* min-width: 36px; */
+    width: 100px;
+    height: 36px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0 12px;
+}
+
+.pagination-button:hover:not(:disabled) {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+    z-index: 1;
+}
+
+.pagination-button:disabled {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #dee2e6;
+    opacity: 0.65;
+}
+
+.pagination-button.active {
+    z-index: 3;
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.pagination-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    background-color: #fff;
+    min-width: 36px;
+    height: 36px;
+    font-size: 14px;
+    padding: 0 8px;
+    border-radius: 4px;
+}
+
+.pagination-ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    font-size: 14px;
+}
+
+.pagination-total {
+    margin-left: 16px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.pagination-arrow {
+    font-size: 18px;
+    line-height: 1;
+}
+
+
+
+@media (max-width: 768px) {
+    .dog-cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+    
+    .dog-card-image-container,
+    .skeleton-image {
+        height: 140px;
+    }
+    
+    .dog-card-name,
+    .skeleton-title {
+        font-size: 16px;
+    }
+    
+    .dog-card-breed,
+    .dog-card-age,
+    .skeleton-subtitle {
+        font-size: 12px;
+    }
+
+    .breed-card-filter-sort {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filter-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .filter-label {
+        font-size: 13px;
+    }
+    
+    .filter-button {
+        padding: 4px 10px;
+        font-size: 13px;
+    }
+}

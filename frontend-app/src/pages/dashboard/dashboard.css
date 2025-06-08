@@ -1,0 +1,147 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+
+.dashboard-header {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.dashboard-header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    filter: brightness(0.9);
+}
+
+
+.dashboard-content {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1100px;
+    margin-top: -40px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: relative;
+}
+
+.dashboard-content h1 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+
+.dashboard-actions {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.logout-button {
+    padding: 8px 16px;
+    background-color: transparent;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+
+.breeds-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.breeds-container h2 {
+    margin: 0 0 12px 0;
+    color: #444;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.breeds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    width: 100%;
+}
+
+.breed-card {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+
+.breed-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+}
+
+.breed-card a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+.loading-spinner {
+    margin: 30px 0;
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-content {
+        width: 95%;
+        padding: 20px 15px;
+    }
+    
+    .dashboard-header {
+        height: 150px;
+    }
+    
+    .breeds-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 10px;
+    }
+    
+    .dashboard-content h1 {
+        font-size: 20px;
+    }
+}
+
+/* Clean up any excess whitespace */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
